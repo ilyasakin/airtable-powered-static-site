@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import Airtable from "airtable"
 import Section from "../components/Section"
 import Hero from "../components/Hero"
+import "../components/layout.css"
 
 const base = new Airtable({ apiKey: process.env.AIRTABLE_APIKEY }).base(
   "appjuAYwNl8BiwjoB"
