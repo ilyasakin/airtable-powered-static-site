@@ -1,51 +1,62 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import SEO from '../components/seo';
-import Airtable from 'airtable';
 import Section from '../components/Section';
 import Hero from '../components/Hero';
 import '../components/layout.css';
 import Layout from '../components/layout';
-
-const base = new Airtable({ apiKey: process.env.AIRTABLE_APIKEY }).base('appjuAYwNl8BiwjoB');
+import { useStaticQuery, graphql } from 'gatsby';
 
 const IndexPage = () => {
-  const [sections, setSections] = useState([]);
-
-  useEffect(() => {
-    base('Home')
-      .select({
-        view: 'Grid view',
-      })
-      .eachPage(
-        function page(records) {
-          console.log(records);
-          setSections(records);
-        },
-        function done(err) {
-          if (err) {
-            console.error(err);
-            return;
+  const data = useStaticQuery(graphql`
+    {
+      allAirtable {
+        edges {
+          node {
+            data {
+              Button
+              ButtonNavigate
+              ButtonText
+              Description
+              ImagePosition
+              ImgAddr
+              Name
+              Text
+              Type
+            }
           }
-        },
-      );
-  }, []);
+        }
+      }
+    }
+  `);
+
+  const sections = data.allAirtable.edges.reverse();
 
   return (
     <Layout>
       <SEO title="Home" />
       {sections.map((section) => {
-        if (section.fields.Type === 'Hero') {
-          return <Hero Text={section.fields.Text} />;
-        } else if (section.fields.Type === 'Content') {
+        const {
+          Type,
+          Text,
+          Description,
+          ImagePosition,
+          ImgAddr,
+          Button,
+          ButtonText,
+          ButtonNavigate,
+        } = section.node.data;
+        if (Type === 'Hero') {
+          return <Hero Text={Text} />;
+        } else if (Type === 'Content') {
           return (
             <Section
-              Text={section.fields.Text}
-              Description={section.fields.Description}
-              ImagePosition={section.fields.ImagePosition}
-              ImgAddress={section.fields.ImgAddr}
-              Btn={section.fields.Button ? true : false}
-              BtnText={section.fields.Button ? section.fields.ButtonText : ''}
-              BtnNav={section.fields.Button ? section.fields.ButtonNavigate : ''}
+              Text={Text}
+              Description={Description}
+              ImagePosition={ImagePosition}
+              ImgAddress={ImgAddr}
+              Btn={Button ? true : false}
+              BtnText={Button ? ButtonText : ''}
+              BtnNav={Button ? ButtonNavigate : ''}
             />
           );
         }
