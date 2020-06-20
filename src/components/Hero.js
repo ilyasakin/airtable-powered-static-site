@@ -1,5 +1,5 @@
-import React from "react"
-import { Typography, Paper } from "@material-ui/core"
+import React from 'react';
+import { Typography, Paper } from '@material-ui/core';
 
 const Hero = ({ Text }) => {
   return (
@@ -7,16 +7,16 @@ const Hero = ({ Text }) => {
       elevation={2}
       style={{
         height: 500,
-        width: "100%",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
+        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
       }}
       square
     >
       <Typography variant="h4">{Text}</Typography>
     </Paper>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
