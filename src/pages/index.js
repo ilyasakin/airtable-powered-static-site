@@ -1,9 +1,9 @@
 import React from 'react';
-import SEO from '../components/seo';
+import SEO from '../components/Seo';
 import Section from '../components/Section';
 import Hero from '../components/Hero';
 import '../components/layout.css';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const IndexPage = () => {
@@ -59,6 +59,8 @@ const IndexPage = () => {
               BtnNav={Button ? ButtonNavigate : ''}
             />
           );
+        } else {
+          return null;
         }
       })}
     </Layout>

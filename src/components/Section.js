@@ -34,7 +34,7 @@ const Section = ({ Text, Description, ImagePosition, ImgAddress, Btn, BtnText, B
         }}
         square
       >
-        <img src={ImgAddress} />
+        <img src={ImgAddress} alt="" />
       </Paper>
       {ImagePosition === 'left' && (
         <ContentWithImage
