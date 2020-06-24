@@ -8,7 +8,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
-import './layout.css';
+import './layout.scss';
 
 const Layout = ({ children }) => {
   // const data = useStaticQuery(graphql`

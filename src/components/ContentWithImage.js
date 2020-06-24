@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Button } from '@material-ui/core';
 import { navigate } from 'gatsby';
-import './App.css';
+import './App.scss';
 
 const ContentWithImage = ({ Text, Description, ImagePosition, Btn, BtnText, BtnNav }) => {
   return (

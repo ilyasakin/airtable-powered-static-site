@@ -2,7 +2,7 @@ import React from 'react';
 import SEO from '../components/Seo';
 import Section from '../components/Section';
 import Hero from '../components/Hero';
-import '../components/layout.css';
+import '../components/layout.scss';
 import Layout from '../components/Layout';
 import { useStaticQuery, graphql } from 'gatsby';
 
