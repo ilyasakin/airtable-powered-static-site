@@ -45,22 +45,23 @@ const IndexPage = () => {
           ButtonText,
           ButtonNavigate,
         } = section.node.data;
-        if (Type === 'Hero') {
-          return <Hero Text={Text} />;
-        } else if (Type === 'Content') {
-          return (
-            <Section
-              Text={Text}
-              Description={Description}
-              ImagePosition={ImagePosition}
-              ImgAddress={ImgAddr}
-              Btn={Button ? true : false}
-              BtnText={Button ? ButtonText : ''}
-              BtnNav={Button ? ButtonNavigate : ''}
-            />
-          );
-        } else {
-          return null;
+        switch (Type) {
+          case 'Hero':
+            return <Hero Text={Text} />;
+          case 'Content':
+            return (
+              <Section
+                Text={Text}
+                Description={Description}
+                ImagePosition={ImagePosition}
+                ImgAddress={ImgAddr}
+                Btn={Button ? true : false}
+                BtnText={Button ? ButtonText : ''}
+                BtnNav={Button ? ButtonNavigate : ''}
+              />
+            );
+          default:
+            return null;
         }
       })}
     </Layout>
