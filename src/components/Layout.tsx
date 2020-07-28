@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { AppBar, Toolbar, Typography } from '@material-ui/core';
 import './layout.scss';
 
-const Layout = ({ children }) => {
+const Layout: React.FC = ({ children }) => {
   // const data = useStaticQuery(graphql`
   //   query SiteTitleQuery {
   //     site {

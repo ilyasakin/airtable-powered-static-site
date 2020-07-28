@@ -2,7 +2,25 @@ import React from 'react';
 import { Paper } from '@material-ui/core';
 import ContentWithImage from './ContentWithImage';
 
-const Section = ({ Text, Description, ImagePosition, ImgAddress, Btn, BtnText, BtnNav }) => {
+interface Props {
+  Text: string;
+  Description: string;
+  ImagePosition: string;
+  ImgAddress: string;
+  Btn: boolean;
+  BtnText: string;
+  BtnNav: string;
+}
+
+const Section: React.FC<Props> = ({
+  Text,
+  Description,
+  ImagePosition,
+  ImgAddress,
+  Btn,
+  BtnText,
+  BtnNav,
+}) => {
   return (
     <Paper
       elevation={5}

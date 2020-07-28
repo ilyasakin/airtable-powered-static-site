@@ -1,7 +1,7 @@
 import React from 'react';
 import { Typography, Paper } from '@material-ui/core';
 
-const Hero = ({ Text }) => {
+const Hero: React.FC<{ Text: string }> = ({ Text }) => {
   return (
     <Paper
       elevation={2}

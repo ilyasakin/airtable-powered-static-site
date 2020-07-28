@@ -3,7 +3,23 @@ import { Typography, Button } from '@material-ui/core';
 import { navigate } from 'gatsby';
 import './App.scss';
 
-const ContentWithImage = ({ Text, Description, ImagePosition, Btn, BtnText, BtnNav }) => {
+interface Props {
+  Text: string;
+  Description: string;
+  ImagePosition: string;
+  Btn: boolean;
+  BtnText: string;
+  BtnNav: string;
+}
+
+const ContentWithImage: React.FC<Props> = ({
+  Text,
+  Description,
+  ImagePosition,
+  Btn,
+  BtnText,
+  BtnNav,
+}) => {
   return (
     <div
       className={ImagePosition === 'right' ? 'p-right' : ImagePosition === 'left' ? 'p-left' : ''}
