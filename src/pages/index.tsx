@@ -33,22 +33,25 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" description="AirTable powered static site" lang="en" meta={[]} />
       {sections.map(
-        (section: {
-          node: {
-            data: {
-              Type: string;
-              Text: string;
-              Description: string;
-              ImagePosition: string;
-              ImgAddr: string;
-              Button: string;
+        (
+          section: {
+            node: {
+              data: {
+                Type: string;
+                Text: string;
+                Description: string;
+                ImagePosition: string;
+                ImgAddr: string;
+                Button: string;
+              };
             };
-          };
-        }) => {
+          },
+          index: number,
+        ) => {
           const { Type, Text, Description, ImagePosition, ImgAddr, Button } = section.node.data;
           switch (Type) {
             case 'Hero':
-              return <Hero Text={Text} />;
+              return <Hero Text={Text} key={`${Type}-${index}`} />;
             case 'Content':
               return (
                 <Section
@@ -57,6 +60,7 @@ const IndexPage = () => {
                   ImagePosition={ImagePosition}
                   ImgAddress={ImgAddr}
                   Button={JSON.parse(Button)}
+                  key={`${Type}-${index}`}
                 />
               );
             default:
