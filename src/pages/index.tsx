@@ -14,8 +14,6 @@ const IndexPage = () => {
           node {
             data {
               Button
-              ButtonNavigate
-              ButtonText
               Description
               ImagePosition
               ImgAddr
@@ -43,22 +41,11 @@ const IndexPage = () => {
               Description: string;
               ImagePosition: string;
               ImgAddr: string;
-              Button: boolean;
-              ButtonText: string;
-              ButtonNavigate: string;
+              Button: string;
             };
           };
         }) => {
-          const {
-            Type,
-            Text,
-            Description,
-            ImagePosition,
-            ImgAddr,
-            Button,
-            ButtonText,
-            ButtonNavigate,
-          } = section.node.data;
+          const { Type, Text, Description, ImagePosition, ImgAddr, Button } = section.node.data;
           switch (Type) {
             case 'Hero':
               return <Hero Text={Text} />;
@@ -69,9 +56,7 @@ const IndexPage = () => {
                   Description={Description}
                   ImagePosition={ImagePosition}
                   ImgAddress={ImgAddr}
-                  Btn={Button ? true : false}
-                  BtnText={Button ? ButtonText : ''}
-                  BtnNav={Button ? ButtonNavigate : ''}
+                  Button={JSON.parse(Button)}
                 />
               );
             default:

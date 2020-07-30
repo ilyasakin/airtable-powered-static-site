@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button as _Button } from '@material-ui/core';
 import { navigate } from 'gatsby';
 import './App.scss';
 
@@ -7,19 +7,10 @@ interface Props {
   Text: string;
   Description: string;
   ImagePosition: string;
-  Btn: boolean;
-  BtnText: string;
-  BtnNav: string;
+  Button: { name: string; slug: string } | undefined;
 }
 
-const ContentWithImage: React.FC<Props> = ({
-  Text,
-  Description,
-  ImagePosition,
-  Btn,
-  BtnText,
-  BtnNav,
-}) => {
+const ContentWithImage: React.FC<Props> = ({ Text, Description, ImagePosition, Button }) => {
   return (
     <div
       className={ImagePosition === 'right' ? 'p-right' : ImagePosition === 'left' ? 'p-left' : ''}
@@ -28,10 +19,10 @@ const ContentWithImage: React.FC<Props> = ({
         {Text}
       </Typography>
       <Typography variant="body1">{Description}</Typography>
-      {Btn && (
-        <Button variant="contained" color="primary" onClick={() => navigate(BtnNav)}>
-          {BtnText}
-        </Button>
+      {Button && (
+        <_Button variant="contained" color="primary" onClick={() => navigate(Button.slug)}>
+          {Button.name}
+        </_Button>
       )}
     </div>
   );

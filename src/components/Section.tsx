@@ -7,20 +7,10 @@ interface Props {
   Description: string;
   ImagePosition: string;
   ImgAddress: string;
-  Btn: boolean;
-  BtnText: string;
-  BtnNav: string;
+  Button: { name: string; slug: string } | undefined;
 }
 
-const Section: React.FC<Props> = ({
-  Text,
-  Description,
-  ImagePosition,
-  ImgAddress,
-  Btn,
-  BtnText,
-  BtnNav,
-}) => {
+const Section: React.FC<Props> = ({ Text, Description, ImagePosition, ImgAddress, Button }) => {
   return (
     <Paper
       elevation={5}
@@ -38,9 +28,7 @@ const Section: React.FC<Props> = ({
           Text={Text}
           Description={Description}
           ImagePosition={ImagePosition}
-          Btn={Btn}
-          BtnText={BtnText}
-          BtnNav={BtnNav}
+          Button={Button}
         />
       )}
 
@@ -59,9 +47,7 @@ const Section: React.FC<Props> = ({
           Text={Text}
           Description={Description}
           ImagePosition={ImagePosition}
-          Btn={Btn}
-          BtnText={BtnText}
-          BtnNav={BtnNav}
+          Button={Button}
         />
       )}
     </Paper>
