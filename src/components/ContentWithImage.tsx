@@ -7,7 +7,7 @@ interface Props {
   Text: string;
   Description: string;
   ImagePosition: string;
-  Button: { name: string; slug: string } | undefined;
+  Button?: { name: string; slug: string };
 }
 
 const ContentWithImage: React.FC<Props> = ({ Text, Description, ImagePosition, Button }) => {

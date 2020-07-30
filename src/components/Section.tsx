@@ -5,8 +5,8 @@ import ContentWithImage from './ContentWithImage';
 interface Props {
   Text: string;
   Description: string;
-  Image: { position: string; address: string } | undefined;
-  Button: { name: string; slug: string } | undefined;
+  Image?: { position: string; address: string };
+  Button?: { name: string; slug: string };
 }
 
 const Section: React.FC<Props> = ({ Text, Description, Image, Button }) => {
