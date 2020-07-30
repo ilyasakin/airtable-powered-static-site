@@ -5,12 +5,11 @@ import ContentWithImage from './ContentWithImage';
 interface Props {
   Text: string;
   Description: string;
-  ImagePosition: string;
-  ImgAddress: string;
+  Image: { position: string; address: string } | undefined;
   Button: { name: string; slug: string } | undefined;
 }
 
-const Section: React.FC<Props> = ({ Text, Description, ImagePosition, ImgAddress, Button }) => {
+const Section: React.FC<Props> = ({ Text, Description, Image, Button }) => {
   return (
     <Paper
       elevation={5}
@@ -23,30 +22,30 @@ const Section: React.FC<Props> = ({ Text, Description, ImagePosition, ImgAddress
       }}
       square
     >
-      {ImagePosition === 'right' && (
+      {Image?.position === 'right' && (
         <ContentWithImage
           Text={Text}
           Description={Description}
-          ImagePosition={ImagePosition}
+          ImagePosition={Image.position}
           Button={Button}
         />
       )}
 
       <Paper
-        className={`${ImagePosition}`}
+        className={`${Image?.position}`}
         style={{
           height: 300,
           width: 300,
         }}
         square
       >
-        <img src={ImgAddress} alt="" />
+        <img src={Image?.address} alt="" />
       </Paper>
-      {ImagePosition === 'left' && (
+      {Image?.position === 'left' && (
         <ContentWithImage
           Text={Text}
           Description={Description}
-          ImagePosition={ImagePosition}
+          ImagePosition={Image.position}
           Button={Button}
         />
       )}

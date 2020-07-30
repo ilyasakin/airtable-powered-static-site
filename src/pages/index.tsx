@@ -15,8 +15,7 @@ const IndexPage = () => {
             data {
               Button
               Description
-              ImagePosition
-              ImgAddr
+              Image
               Name
               Text
               Type
@@ -40,15 +39,14 @@ const IndexPage = () => {
                 Type: string;
                 Text: string;
                 Description: string;
-                ImagePosition: string;
-                ImgAddr: string;
+                Image: string;
                 Button: string;
               };
             };
           },
           index: number,
         ) => {
-          const { Type, Text, Description, ImagePosition, ImgAddr, Button } = section.node.data;
+          const { Type, Text, Description, Image, Button } = section.node.data;
           switch (Type) {
             case 'Hero':
               return <Hero Text={Text} key={`${Type}-${index}`} />;
@@ -57,8 +55,7 @@ const IndexPage = () => {
                 <Section
                   Text={Text}
                   Description={Description}
-                  ImagePosition={ImagePosition}
-                  ImgAddress={ImgAddr}
+                  Image={JSON.parse(Image)}
                   Button={JSON.parse(Button)}
                   key={`${Type}-${index}`}
                 />
