@@ -29,7 +29,7 @@ const IndexPage = () => {
     }
   `);
 
-  const sections: Record<string, any> = data.allAirtable.edges.reverse();
+  const sections: Record<string, any> = data.allAirtable.edges;
 
   return (
     <Layout>

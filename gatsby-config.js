@@ -39,6 +39,7 @@ module.exports = {
           {
             baseId: 'appjuAYwNl8BiwjoB',
             tableName: 'Home',
+            tableView: 'Grid view',
           },
         ],
       },
