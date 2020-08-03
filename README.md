@@ -21,6 +21,7 @@ If you do make a change you'll need to build it again.
 - Clone this repository (no sh\*t)
 - `yarn` to install dependencies
 - Create two files named `.env.development` and `.env.production`. And enter your api key like this: `AIRTABLE_APIKEY=YOUR_APIKEY` to both of the files.
+- Enter your baseId, tableName and tableView in gatsby-source-airtable in gatsby-config.js
 - `yarn develop` to start development server. Remember to restart the server everytime you changed the table.
 - Make your changes. (and open a pull request?)
 - `yarn build` to build.
