@@ -1,6 +1,10 @@
+const { readFileSync } = require('fs');
+
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
+
+const tables = JSON.parse(readFileSync('./tables.json'));
 
 module.exports = {
   siteMetadata: {
@@ -35,13 +39,7 @@ module.exports = {
       resolve: 'gatsby-source-airtable',
       options: {
         apiKey: process.env.AIRTABLE_APIKEY,
-        tables: [
-          {
-            baseId: 'appjuAYwNl8BiwjoB',
-            tableName: 'Home',
-            tableView: 'Grid view',
-          },
-        ],
+        tables,
       },
     },
     `gatsby-plugin-material-ui`,
