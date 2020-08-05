@@ -26,6 +26,7 @@
   },
   "devDependencies": {
     "@types/react-helmet": "^6.0.0",
+    "airtable": "^0.8.1",
     "prettier": "2.0.5"
   },
   "keywords": [
@@ -33,11 +34,12 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "yarn gen_tables && gatsby build",
+    "develop": "yarn gen_tables && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
+    "gen_tables": "node ./src/utils/gen_tables.js",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "repository": {
