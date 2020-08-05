@@ -5,6 +5,13 @@ If you do make a change you'll need to build it again.
 
 [See example Airtable table](https://airtable.com/invite/l?inviteId=invjhAwFKqiUa5DYQ&inviteToken=b5375aac3973686a0a626c3fc8753a84c39b61535cfe2a8f91a9e7d7360ce7d7)
 
+#### Airtable Tables
+
+| Table Name | Description                                                                                 |
+| ---------- | ------------------------------------------------------------------------------------------- |
+| Pages      | Just have one field with name of 'Name' and enter other table names that representing pages |
+| ...        | Rest are your pages. Refer to `Airtable Fields` when creating them.                         |
+
 #### Airtable Fields
 
 | Field Name  | Description                                                                                                                              |
@@ -20,7 +27,7 @@ If you do make a change you'll need to build it again.
 
 - Clone this repository (no sh\*t)
 - `yarn` to install dependencies
-- Create two files named `.env.development` and `.env.production`. And enter your api key like this: `AIRTABLE_APIKEY=YOUR_APIKEY` to both of the files.
+- Create two files named `.env.development` and `.env.production`. And enter your api key like this: `AIRTABLE_APIKEY=YOUR_APIKEY` to both of the files. Also enter your Base ID to `.env.development` in `AIRTABLE_BASEID` environment variable.
 - Enter your baseId, tableName and tableView in gatsby-source-airtable in gatsby-config.js
 - `yarn develop` to start development server. Remember to restart the server everytime you changed the table.
 - Make your changes. (and open a pull request?)
