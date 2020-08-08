@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{"+xhR":function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),o=a.n(n),l=a("Wbzz"),c=a("soUV"),i=a("hizP");t.default=function(){return o.a.createElement(c.a,null,o.a.createElement(i.a,{title:"Page two",description:"AirTable powered static site",lang:"en",meta:[]}),o.a.createElement("h1",null,"Hi from the second page"),o.a.createElement("p",null,"Welcome to page 2"),o.a.createElement(l.Link,{to:"/"},"Go back to the homepage"))}}}]);
+//# sourceMappingURL=component---src-pages-page-2-tsx-d2e46728beee842e7ad3.js.map

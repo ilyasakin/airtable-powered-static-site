@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{"i6+/":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),i=n.n(a),s=n("soUV"),l=n("hizP");t.default=function(){return i.a.createElement(s.a,null,i.a.createElement(l.a,{title:"404: Not found",description:"AirTable powered static site",lang:"en",meta:[]}),i.a.createElement("h1",null,"NOT FOUND"),i.a.createElement("p",null,"You just hit a route that doesn't exist... the sadness."))}}}]);
+//# sourceMappingURL=component---src-pages-404-tsx-15d9cf16d6477afbb89c.js.map
