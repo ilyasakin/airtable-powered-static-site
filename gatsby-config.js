@@ -7,6 +7,7 @@ require('dotenv').config({
 const tables = JSON.parse(readFileSync('./tables.json'));
 
 module.exports = {
+  pathPrefix: '/airtable-powered-static-site',
   siteMetadata: {
     title: `Airtable Powered Static Site`,
     description: `This project gets data from Airtable and generates a static site`,
