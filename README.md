@@ -25,7 +25,7 @@ If you do make a change you'll need to build it again.
 
 #### Instructions
 
-- Clone this repository (no sh\*t)
+- Clone this repository
 - `yarn` to install dependencies
 - Create two files named `.env.development` and `.env.production`. And enter your api key like this: `AIRTABLE_APIKEY=YOUR_APIKEY` to both of the files. Also enter your Base ID to `.env.development` in `AIRTABLE_BASEID` environment variable.
 - Enter your baseId, tableName and tableView in gatsby-source-airtable in gatsby-config.js
